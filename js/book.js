@@ -27,11 +27,12 @@ const searchBook=()=>{
 }
 const displaySearch=books=>{
     const searchResult= document.getElementById('search-result');
-    const found= document.createElement('p');
+     const searchFound= document.getElementById('search-found');
     
-    found.innerHTML=`<p> <strong>Found: ${books.docs.slice(0, 30).length} of ${books.numFound}</strong></p>`;
-    const searchFound= document.getElementById('search-found');
-    searchFound.appendChild(found);
+   
+    
+    searchFound.innerHTML=`<p> <strong>Found: ${books.docs.slice(0, 30).length} of ${books.numFound}</strong></p>`;
+    
    
     console.log(books.length);
     searchResult.textContent='';
@@ -67,6 +68,7 @@ const displaySearch=books=>{
         const searchField= document.getElementById('search-field');
       
         searchField.value='';
+        
 
        
     });
