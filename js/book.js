@@ -29,7 +29,7 @@ const displaySearch=books=>{
     const searchResult= document.getElementById('search-result');
     const found= document.createElement('p');
     
-    found.innerHTML=`<p> <strong>Found: ${books.docs.length} of ${books.numFound}</strong></p>`;
+    found.innerHTML=`<p> <strong>Found: ${books.docs.slice(0, 30).length} of ${books.numFound}</strong></p>`;
     const searchFound= document.getElementById('search-found');
     searchFound.appendChild(found);
    
@@ -45,7 +45,7 @@ const displaySearch=books=>{
         notFoundDiv.appendChild(h1);
     }
     
-    books.docs.forEach(book=>{
+    books.docs.slice(0,30).forEach(book=>{
         // console.log(book.author_name);
         const div= document.createElement('div');
         
