@@ -39,11 +39,12 @@ const displaySearch=books=>{
 
     if(books.docs.length===0){
         const notFoundDiv= document.getElementById('not-found');
-        const h1= document.createElement('h1');
-        h1.classList.add('text-center');
-        h1.style.color='red';
-        h1.innerText='Not Found';
-        notFoundDiv.appendChild(h1);
+        notFoundDiv.innerHTML='<h1 class="text-danger text-center">Not Found</h1>';
+        // const h1= document.createElement('h1');
+        // h1.classList.add('text-center');
+        // h1.style.color='red';
+        // h1.innerText='Not Found';
+        // notFoundDiv.appendChild(h1);
     }
     
     books.docs.slice(0,30).forEach(book=>{
