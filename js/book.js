@@ -17,7 +17,7 @@ const searchBook=()=>{
     toggleSpinner('block');
     toggleSearch('none');
    
-    searchField.value='';
+    // searchField.value='';
     const url=`https://openlibrary.org/search.json?q=${searchText}`;
     fetch(url)
         .then(res=> res.json())
@@ -64,6 +64,10 @@ const displaySearch=books=>{
         
         `;
         searchResult.appendChild(div);
+        const searchField= document.getElementById('search-field');
+      
+        searchField.value='';
+
        
     });
     toggleSpinner('none');
